@@ -1,0 +1,6 @@
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q= _i=1^N_c ( _j=1^N_t F_[0,T] T_i^j ) G_[0,T] (_k=1^N_o O_k\\E$"}
+{"rule":"NON_STANDARD_WORD","sentence":"^\\Q= _i=1^N_c ( _j=1^N_t F_[0,T] T_i^j ) G_[0,T] (_k=1^N_o O_k\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q= _i=1^N_c ( _j=1^N_t F_[0,T] T_i^j ) G_[0,T] (_k=1^N_o O_k\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\Q= _i=1^N_c ( _j=1^N_t F_[0,T] T_i^j ) G_[0,T] (_k=1^N_o O_k\\E$"}
+{"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\Q^_[t_1, t_2] ^((y, t)) = _t^ [t+t_1, t+t_2]] ^ (y, t^ ^_1 U_[t_1, t_2] _2((y, t))= _t^ [t+t_1, t+t_2]( m i n ([^_1((y, t^)),... ... _t^ [t+t_1, t^](^_2((y, t^ )))]))\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q%%%%Results of the example of STL planner with robustness.STL setting.\\E$"}
