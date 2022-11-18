@@ -115,25 +115,21 @@ Compared with previous STL encoding approaches:
     \end{itemize}
 
     \begin{itemize}
-        \item[$\bullet$]An efficient STL encoding approach leading to a number of binary variables that is logarithmic in the number of specification predicates is designed via a novel STL tree structure, where a formula flattening method is applied to simplify the tree.
+        \item[$\bullet$] We further simplify the STL tree structure in \cite[]{kurtz2022mixed} to make it more applicable for our classification problem. A decomposition method is proposed by exploring the repeated structure of STL tree, and we use the formula flattening method to reduce the layers of the STL tree. In this way we develop an efficient STL encoding approach that uses fewer binary variables than the typical approach.
         \end{itemize}
-
-    \begin{itemize}
-        \item[$\bullet$]While the previous STL tree only decomposes the specification as $\wedge$-type nodes and $\vee$-type nodes, the proposed method can further decompose these nodes with repeated structure.
-            \end{itemize}
     \begin{itemize} 
-        \item[$\bullet$]Numerical examples show that the OMISTL framework demonstrates speed-ups of 1-2 orders of magnitude when solving MICP online compared with the state-of-the-art STL encoding, which
-        can realize real-time control efficiently and reliably.
+        \item[$\bullet$]Numerical examples show that the OMISTL framework demonstrates speed-ups of 1-2 orders of magnitude when solving MICP online compared with the state-of-the-art STL encoding, which can realize real-time control efficiently and reliably.
     \end{itemize}
 
 Compared with previous approaches based on machine learning:
 
 \begin{itemize} 
-    \item[$\bullet$]Compared with work \cite{bertsimas2022online}, the static LQR model is extended into a real-time MPC model combined with STL specification, which is computing online in a receding horizon with time-varying destinations and initial conditions.
+    \item[$\bullet$]
+    We bring the learning-based method into receding horizon control applications for a certain non-time-varying specifications, i.e. the constraints of the resulting MICP from STL specifications remain unchanged with the state changes. We take the obstacle avoidance example in \cite{bertsimas2022online} to implement the real-time MPC applications.
 \end{itemize}
 
 \begin{itemize} 
-    \item[$\bullet$]With the proposed efficient STL encoding, we define a more succinct and general STL integer strategy used for the classification compared with \cite{bertsimas2022online}\cite{Cauligi2020}, which enables OMISTL framework to be combined with different STL specifications. In addition, the fewer tight constraints and integer strategies are obtained through our definition, which contribute to the online computation.
+    \item[$\bullet$]Based on the efficient STL encoding, we define a more succinct and general STL integer strategy used for the classification compared with \cite{bertsimas2022online}\cite{Cauligi2020}, which enables OMISTL framework to be combined with different STL specifications. In addition, the fewer tight constraints and integer strategies are obtained through our definition, which contribute to the online computation.
 \end{itemize}
 
 \begin{itemize}
@@ -151,7 +147,7 @@ One of the classical works treating the motion planning problems is in \cite[]{e
 It is generally accepted that the collision avoidance problem is a challenging task due to the presence of the non-convex feasible domain. The work of \cite[]{culligan2006online} presents a path planner using MIP to solve a receding horizon optimization problem for unmanned aerial vehicles (UAVs), where the obstacle avoidance constraints for the MILP formulation are considered. In \cite[]{schouwenaars2006safe} the author presents a framework for safe online trajectory planning of unmanned vehicles through partially unknown environments. An MPC framework is employed, MIP playing an instrumental role in order to incorporate the collision avoidance constraints. These problems can be extended into multiple obstacles cases, which can be found in \cite[]{maia2009use}\cite[]{stoican2018exact} \cite[]{richards2015inter}.
 However, the above studies fail to extend the considered problems into more general STL problems since obstacle avoidance and reaching area is just the essential tasks in robotics control and the simple cases in STL specifications. To implement more complex tasks, STL must be combined with the MIP problems to make the robots intelligent.
 \subsection{STL specification encoding} 
-The standard STL encoding uses Mixed-Integer Convex Programming (MICP) is first proposed in \cite[]{raman2014model}. And later refined in \cite[]{sadraddini2015robust} and \cite[]{sadraddini2018formal}, which is sound and complete, and enable us to find globally optimal solutions. However, the major limitation is and slow computation and scalability. MICP’s worst-case complexity is exponential in the number of binary variables, and the standard STL synthesis introduces a binary variable for each predicate at each timestep, which limits MICP methods to simple specifications and short time horizons. With
+The standard STL encoding uses Mixed-Integer Convex Programming (MICP) is first proposed in \cite[]{raman2014model}. And later refined in \cite[]{sadraddini2015robust} and \cite[]{sadraddini2018formal}, which is sound and complete, and enable us to find globally optimal solutions. In short, a proof system is complete if everything that is true has a proof, and sound if everything that is provable is in fact true. However, the major limitation is and slow computation and scalability. MICP’s worst-case complexity is exponential in the number of binary variables, and the standard STL synthesis introduces a binary variable for each predicate at each timestep, which limits MICP methods to simple specifications and short time horizons. With
 this in mind, much research in STL synthesis has gone toward reducing MICP problem sizes. For example, rewriting formulas in Positive Normal Form (PNF) significantly reduces the number of binary variables and constraints \cite[]{raman2014model}, \cite[]{sadraddini2018formal}. Waypoint-based abstractions can further limit the problem
 size \cite[]{conforti2014integer}.
 
@@ -300,11 +296,11 @@ In this work, the  STL motion planning problem is formulated as the parameterize
 \end{equation}
 where $x \in \mathbb{R} ^{n_{x}}$ are continuous decision variables, $\delta \in(0,1)^{n_{\delta}} $ are binary variables, and $\theta^\varphi \in \mathbb{R} ^{n_{p}}$ are the problem parameters depending on the STL specification $\varphi$. The linear constraints $f_i$ only contain the continuous variables $x$, and $g_i$ are all the mixed-integer constraints that contain binary variables $\delta_i$. 
 
-Formulating STL specification using mixed-integer constraints $g_i$ poses a challenge for this problem, where $g_i$ includes the Big-M constraints and SOS1 constraints. Via the STL tree structure in \cite{kurtz2022mixed}\cite{leung2020back}, Big-M constraints and SOS1 constraints enable us to create mixed-integer constraints to capture all STL specifications with a logarithmic number of binary variables, which is clarified in section \ref*{STL_planner}. Big-M constraints are used for the predicates $\pi$ of the STL specification $\varphi$, and SOS1 constraints are introduced for the nodes of the STL tree. For the specific encoding method please refer to section \ref*{STL_encooding}.
+Formulating STL specification using mixed-integer constraints $g_i$ poses a challenge for this problem, where $g_i$ includes the Big-M constraints and SOS1 constraints. We apply the same STL tree structure in \cite{kurtz2022mixed}\cite{leung2020back} to create mixed-integer constraints. Thanks to this structure, we are able to capture all STL specifications with a logarithmic number of binary variables, which is clarified in section \ref*{STL_planner}. Big-M constraints are used for the predicates $\pi$ of the STL specification $\varphi$, and SOS1 constraints are introduced for the nodes of the STL tree. For the specific encoding method please refer to section \ref*{STL_encooding}.
 
 
 \subsubsection*{Big-M constraint}
-Big-M constraints are a regular source of instability for optimization problems. In this paper Big-M method is used to formulate the disjunctive predicates. Let $N_\vee^{\pi}$ be the number of disjunctive subformulars for predicates (indexed by $i$), and $N_i$ be the number of disjunctions associated with the $i_{th}$ disjunctive subformula (indexed by $j$). The $j_{th}$ predicates for the $i_{th}$ disjunctive subformulars can be expressed as:
+In this paper Big-M method is used to formulate the disjunctive predicates. Let $N_\vee^{\pi}$ be the number of disjunctive subformulars for predicates (indexed by $i$), and $N_i$ be the number of disjunctions associated with the $i_{th}$ disjunctive subformula (indexed by $j$). The $j_{th}$ predicates for the $i_{th}$ disjunctive subformulars can be expressed as:
 
 \begin{equation}
     \bigvee_{j=1}^{N_i} a_{ij}^Tx+b_{ij}>0,
@@ -340,6 +336,7 @@ thus 4 binary variables $\delta_1 - \delta_4 $ are introduced with Big-M constra
     \quad \mathrm{p}_1-c + M^-\left(1-\delta_3\right) \leq 0, \\
     \mathrm{p}_2-b + M^+\left(1-\delta_2\right) \geq 0, \quad \mathrm{p}_2-d + M^-\left(1-\delta_4\right) \leq 0,
 \end{split}
+\label{big-Mconstraints}
 \end{equation}
 where $M^+,M^-$ are sufficient large positive/negetive numbers. $\delta_1 = 1$ implies $p_1 \geq a$ so that the linear predicate holds and force the robot to go above the face $a$, while $\delta_3 = 0$ implies $p_1 - c +M^-\leq 0$, rendering itself a trivial constraint. To avoid a 4-face obstacle, we need at least one predicate to be held, so adding the constraint $\delta_1+\delta_2+\delta_3+\delta_4 \geq 1$.
 
@@ -377,7 +374,7 @@ Another definition of tight constraints \cite[]{Cauligi2020} can be used to deal
         \mathcal{T}_M(\theta)=\left\{i \mid g_i\left(x^* ; \theta\right) \leq a_i(\theta) \delta_i \Longleftrightarrow \delta_i=\delta_i^*\right\},
     \end{aligned} 
 \end{equation}
-where $g_i(x^* ; \theta) \leq a_i(\theta) \delta_i$ is the genenral form of Big-M constraint, and this means for the particular continuous solution $x^*$, this constraint can only be satisfied by the values from the optimal integer solution $\delta^*$. This definition avoids the there existence of multiple optimal strategies, and there is no association with the previous definition \ref*{tight1}.
+where $g_i(x^* ; \theta) \leq a_i(\theta) \delta_i$ is the genenral form of Big-M constraint, and this means ``for the particular continuous solution $x^*$, this constraint can only be satisfied by the values from the optimal integer solution $\delta^*$.''\cite[]{Cauligi2020} This definition avoids the existence of multiple optimal strategies, and there is no association with the previous definition \ref*{tight1}.
 
 % For instance, suppose we have $g(x^*,\theta)\leq 0$ for some particular continuous solution $x^*$, so that the inequality can be satisfied by both $\delta^{*}=0$ and  $\delta^{*}=1$, making $\delta^{*}$ not unique therefore it is not tight. 
 \subsubsection*{B. Our definition of tight constraints}
@@ -399,6 +396,28 @@ In this work, based on the properties of Big-M constraints and STL tree, we prop
 To avoid confusion, from now on all the tight constraints in the following text are referring to definition \ref*{tight3}, which means for an optimal solution $x^*$ and $\delta^{\pi*}$, the tight constraints imply that the linear constraints of the predicates $g_i^{\pi}$ are less equal than 0.
 
 The insight behind the definition is easy: based on the big-M method, $\delta^{\pi*}=0$ implies trivial constraints that can be neglected when solving MIPs. And tight constraints choose these non-redundant constraints that may form the boundary of the optimal solutions, corresponding to $\delta^{\pi*}=1$. Note that the tight constraint is defined based on the predicate $\pi$ only because the big-M constraints are merely used in the leaf nodes.
+
+We propose this definition to reduce the number of tight constraints while preserving the optimality of solutions. This definition utilize the SOS1 encoding property to select the tight constraints, i.e. there is only one non-zero element in a SOS1 vector and the corresponding constraint is tight. We prefer this denifition because when extending the learning-based method into STL applications, using definition \ref*{tight2} yields too many tight constraints which increases the classification difficulty. It is clear that our definition leads to fewer tight constraints than the definition \ref*{tight2}.
+
+\subsubsection*{C. Examples of tight constraints}
+We present two small examples to show exactly what is the tight constraints in a obstacle avoidance MICP. As in formula \ref*{big-Mconstraints}, we formulate a 4-face obstacle avoiding specification in a 2-D position $(p_1,p_2)$ and take the specific values, as shown in fig.\ref*{tight_definition}.
+\begin{equation}
+    \begin{split}
+        \mathrm{p}_1-4 + M^+\left(1-\delta_1\right)\geq 0,
+        \quad \mathrm{p}_1-2 + M^-\left(1-\delta_3\right) \leq 0, \\
+        \mathrm{p}_2-3 + M^+\left(1-\delta_2\right) \geq 0, \quad \mathrm{p}_2-1 + M^-\left(1-\delta_4\right) \leq 0,
+    \end{split}
+    \end{equation}
+The upper figure presents Cauligi's definition of tight constraint \ref{tight2} in such scenario. For the red point (0, 0.9), since the constraints of the below and the left faces can be satisfied by both $\delta$ = 1 or 0, they are by definition not tight. Correspondingly, the right and upper face constraints are defined as tight since they can only be satisfied by $\delta = 0$ for the red point. 
+
+The below figure demonstrates our definition. For all the points below the face, their tight constraints are the same one $\mathrm{p}_1-2 + \left(1-\delta_3\right)M^- \leq 0$. Since for these points the integer values $\delta_3$ are all equal to 1, by our definition this constraint is defined as tight. It is worth noting that this constraint corresponding to the red points are defined as active constraints \ref{tight1}, because they lie on the boundary so that the equality holds here. This illustrates why the definition \ref{tight1} is also included in our definition.
+
+\begin{figure*}[!htb]
+    \centering
+    \subfigure[Cauligi's definition]{\includegraphics[scale=0.6]{tight1.png}\label{percent_compare_ratios}}\hspace{0.1cm}
+    \subfigure[Our definition]{\includegraphics[scale=0.6]{tight2.png}\label{solve_time}}
+    \label{tight_definition}
+\end{figure*}
 
 By introducing the set of tight constraints, the goal is to define a unique strategy set for each parameter sampling, and use it as labels in the machine learning. Since given a sampling parameter $\theta$, the MICP problem may have multiple optimal integer solutions, leading to multiple correct labels so that the classification problem becomes ill-posed.
 %Q:explain why for the machine learning training you need a unique set
@@ -425,7 +444,9 @@ The number of binary variables $\delta^\pi$ may increase exponentially with the 
         \end{aligned}
     \end{equation}
 \end{myDef}
-$\mathcal{T}^\pi(\theta^\varphi)$ is the index of the tight constraint, and $X^{SOS1}$ is the SOS1 encoding of the integer variable values of $\delta$ with fewer logarithmic binary variables, which is clarified in section \ref{Decomposition for MPC}. Note that compared with \cite{bertsimas2022online}\cite{Cauligi2020}\cite{bertsimas2021voice}, this integer strategy is a less complex and more general form that can be extended into STL scenarios, because the problem they considered is just a special case that simply takes conjunction of several predicate formulas.
+$\mathcal{T}^\pi(\theta^\varphi)$ is the index of the tight constraint, and $X^{SOS1}$ is the SOS1 encoding of the integer variable values of $\delta$ with fewer binary variables, which is clarified in section \ref{Decomposition for MPC}. Note that compared with \cite{Cauligi2020}, this integer strategy is a less complex and more general form that can be extended into STL scenarios, because they focus on a MICP with a certain structure, i.e., ``mixed logical constraints can be represented as a conjunction of Boolean formulas''.\cite{Cauligi2020}
+
+Here is why we propose this defenition, which yields fewer strategies than the strategy definition in CoCo \cite{Cauligi2020}. Although it make sense to take the MICP with the typical STL encoding and apply CoCo's definition, it leads to more integers and strategies than our definition, which increases the difficulty of the classification because of resulting more label types. However, our strategy definition fails for CoCo, this is because CoCo takes the integer solutions to define the tight constraints and build the integer strategy. But our integer solutions cannot be directly used to build the strategy defined by CoCo, since they are based on the SOS1 encoding which needs to be decoded. 
 
 With the given integer strategy $\mathcal{S}(\theta^\varphi)$, the SOS1 encoding $X^{SOS1}$ can be decoded and recover the optimal solution of integer variables $\delta^*$, the set of tight constraints is determined as well, so that the MICP problem (\ref*{eq1}) can be simplified as such form:
 \begin{equation}
@@ -461,6 +482,9 @@ Given a finite horizon length $T$, an initial state $x_0$ and a control sequence
 \subsection{Receding horizon application on multiple-obstacle avoidance case}
 
 To start with, consider an MPC control problem that avoids multiple obstacles. In this case, the static LQR problem based on \cite{bertsimas2022online} is extended into a real-time MPC model combined with STL specification, to simplify we do not consider the robustness satisfaction. 
+
+We bring the learning-based method into receding horizon control applications for a certain non-time-varying specifications, i.e. the constraints
+of the resulting MICP from STL specifications remain unchanged with the state changes.
 
 Given the specification $\varphi=\Box_{[0,T]}(\bigwedge_{i=1}^n\lnot O_i)$ for obstacles avoidance, the symmetric cost matrices $Q\succeq 0,R\succeq 0 $, the initial and reference state are defined as $x_0 = [p_0,v_0]$, $x^{ref}=[p^{ref},v^{ref}]$, and the prediction horizon is $T$. Here the horizon length of the total trajectory is defined as $T+N$, which means we will optimize $N$ steps totally and predict $T$ steps at each timestep. MPC control aims to continuously solve such MICP problems online in a receding horizon [t,t+T]:
 
@@ -1029,10 +1053,10 @@ It is also remarkable that there exists a trade-off between the number of disjun
         \scalebox{0.80}{
             \begin{tabular}{c|c|cccccc}
                 Number of obstacles     & Parameters        & 5   & 6   & 7   & 8   & 9   & 10  \\ \hline
-                \multirow{3}{*}{OMISTL} & Total constaints  & 384 & 449 & 514 & 579 & 644 & 709 \\
+                \multirow{3}{*}{OMISTL} & Total constraints  & 384 & 449 & 514 & 579 & 644 & 709 \\
                                         & Tight constraints & 30  & 36  & 42  & 48  & 54  & 60  \\
                                         & Strategy number   & 231 & 232 & 238 & 251 & 244 & 241 \\ \hline
-                \multirow{3}{*}{CoCo}   & Total constaints  & 184 & 209 & 234 & 259 & 284 & 309 \\
+                \multirow{3}{*}{CoCo}   & Total constraints  & 184 & 209 & 234 & 259 & 284 & 309 \\
                                         & Tight constraints & 66  & 81  & 94  & 107 & 121 & 134 \\
                                         & Strategy number   & 562 & 535 & 563 & 558 & 576 & 556 \\ \hline
                 \end{tabular}

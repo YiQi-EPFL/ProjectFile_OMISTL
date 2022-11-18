@@ -1,0 +1,288 @@
+\begin{thebibliography}{10}
+
+\bibitem{mou2018optimal}
+Shenyu Mou, Yan Chang, Wenshuo Wang, and Ding Zhao.
+\newblock An optimal lidar configuration approach for self-driving cars.
+\newblock {\em arXiv preprint arXiv:1805.07843}, 2018.
+
+\bibitem{sawadsitang2018supplier}
+Suttinee Sawadsitang, Dusit Niyato, Puay~Siew Tan, and Ping Wang.
+\newblock Supplier cooperation in drone delivery.
+\newblock In {\em 2018 IEEE 88th Vehicular Technology Conference (VTC-Fall)},
+  pages 1--5. IEEE, 2018.
+
+\bibitem{liu2022integer}
+Shuo Liu, Shixin Liu, and Chao Lu.
+\newblock An integer programming formulation and iterative scheme algorithm for
+  the block relocation problem.
+\newblock {\em Journal of Control and Decision}, pages 1--10, 2022.
+
+\bibitem{booth2016mixed}
+Kyle~EC Booth, Tony~T Tran, Goldie Nejat, and J~Christopher Beck.
+\newblock Mixed-integer and constraint programming techniques for mobile robot
+  task planning.
+\newblock {\em IEEE Robotics and Automation Letters}, 1(1):500--507, 2016.
+
+\bibitem{landry2016aggressive}
+Benoit Landry, Robin Deits, Peter~R Florence, and Russ Tedrake.
+\newblock Aggressive quadrotor flight through cluttered environments using
+  mixed integer programming.
+\newblock In {\em 2016 IEEE international conference on robotics and automation
+  (ICRA)}, pages 1469--1475. IEEE, 2016.
+
+\bibitem{lee2011mixed}
+Jon Lee and Sven Leyffer.
+\newblock {\em Mixed integer nonlinear programming}, volume 154.
+\newblock Springer Science \& Business Media, 2011.
+
+\bibitem{ulusoy2013optimality}
+Alphan Ulusoy, Stephen~L Smith, Xu~Chu Ding, Calin Belta, and Daniela Rus.
+\newblock Optimality and robustness in multi-robot path planning with temporal
+  logic constraints.
+\newblock {\em The International Journal of Robotics Research}, 32(8):889--911,
+  2013.
+
+\bibitem{raman2014model}
+Vasumathi Raman, Alexandre Donz{\'e}, Mehdi Maasoumy, Richard~M Murray, Alberto
+  Sangiovanni-Vincentelli, and Sanjit~A Seshia.
+\newblock Model predictive control with signal temporal logic specifications.
+\newblock In {\em 53rd IEEE Conference on Decision and Control}, pages 81--87.
+  IEEE, 2014.
+
+\bibitem{ding2022trajectory}
+Tao Ding, Yuhao Zhang, Guocai Ma, Zhihong Cao, Xingwei Zhao, and Bo~Tao.
+\newblock Trajectory tracking of redundantly actuated mobile robot by mpc
+  velocity control under steering strategy constraint.
+\newblock {\em Mechatronics}, 84:102779, 2022.
+
+\bibitem{kurtz2022mixed}
+Vincent Kurtz and Hai Lin.
+\newblock Mixed-integer programming for signal temporal logic with fewer binary
+  variables.
+\newblock {\em IEEE Control Systems Letters}, 6:2635--2640, 2022.
+
+\bibitem{bertsimas2022online}
+Dimitris Bertsimas and Bartolomeo Stellato.
+\newblock Online mixed-integer optimization in milliseconds.
+\newblock {\em INFORMS Journal on Computing}, 2022.
+
+\bibitem{Cauligi2020}
+Abhishek Cauligi, Preston Culbertson, Bartolomeo Stellato, Dimitris Bertsimas,
+  Mac Schwager, and Marco Pavone.
+\newblock Learning mixed-integer convex optimization strategies for robot
+  planning and control.
+\newblock In {\em 2020 59th IEEE Conference on Decision and Control (CDC)},
+  pages 1698--1705, 2020.
+
+\bibitem{earl2005iterative}
+Matthew~G Earl and Raffaello D'andrea.
+\newblock Iterative milp methods for vehicle-control problems.
+\newblock {\em IEEE Transactions on Robotics}, 21(6):1158--1167, 2005.
+
+\bibitem{cetin2007hybrid}
+B~Cetin, M~Bikdash, and FY~Hadaegh.
+\newblock Hybrid mixed-logical linear programming algorithm for collision-free
+  optimal path planning.
+\newblock {\em IET Control Theory \& Applications}, 1(2):522--531, 2007.
+
+\bibitem{richards2003performance}
+Arthur Richards and Jonathan How.
+\newblock Performance evaluation of rendezvous using model predictive control.
+\newblock In {\em AIAA Guidance, Navigation, and Control Conference and
+  Exhibit}, page 5507, 2003.
+
+\bibitem{culligan2006online}
+Kieran~Forbes Culligan.
+\newblock {\em Online trajectory planning for UAVs using mixed integer linear
+  programming}.
+\newblock PhD thesis, Massachusetts Institute of Technology, 2006.
+
+\bibitem{schouwenaars2006safe}
+Tom Schouwenaars.
+\newblock {\em Safe trajectory planning of autonomous vehicles}.
+\newblock PhD thesis, Massachusetts Institute of Technology, 2006.
+
+\bibitem{maia2009use}
+Marcelo~H Maia and Roberto~KH Galvao.
+\newblock On the use of mixed-integer linear programming for predictive control
+  with avoidance constraints.
+\newblock {\em International Journal of Robust and Nonlinear Control:
+  IFAC-Affiliated Journal}, 19(7):822--828, 2009.
+
+\bibitem{stoican2018exact}
+Florin Stoican, Ionela Prodan, and Esten~Ingar Gr{\o}tli.
+\newblock Exact and overapproximated guarantees for corner cutting avoidance in
+  a multiobstacle environment.
+\newblock {\em International Journal of Robust and Nonlinear Control},
+  28(15):4528--4548, 2018.
+
+\bibitem{richards2015inter}
+Arthur Richards and Oliver Turnbull.
+\newblock Inter-sample avoidance in trajectory optimizers using mixed-integer
+  linear programming.
+\newblock {\em International Journal of Robust and Nonlinear Control},
+  25(4):521--526, 2015.
+
+\bibitem{sadraddini2015robust}
+Sadra Sadraddini and Calin Belta.
+\newblock Robust temporal logic model predictive control.
+\newblock In {\em 2015 53rd Annual Allerton Conference on Communication,
+  Control, and Computing (Allerton)}, pages 772--779. IEEE, 2015.
+
+\bibitem{sadraddini2018formal}
+Sadra Sadraddini and Calin Belta.
+\newblock Formal synthesis of control strategies for positive monotone systems.
+\newblock {\em IEEE Transactions on Automatic Control}, 64(2):480--495, 2018.
+
+\bibitem{conforti2014integer}
+Michele Conforti, G{\'e}rard Cornu{\'e}jols, Giacomo Zambelli, et~al.
+\newblock {\em Integer programming}, volume 271.
+\newblock Springer, 2014.
+
+\bibitem{kurtz2021more}
+Vince Kurtz and Hai Lin.
+\newblock A more scalable mixed-integer encoding for metric temporal logic.
+\newblock {\em IEEE Control Systems Letters}, 6:1718--1723, 2021.
+
+\bibitem{marcucci2021shortest}
+Tobia Marcucci, Jack Umenberger, Pablo~A Parrilo, and Russ Tedrake.
+\newblock Shortest paths in graphs of convex sets.
+\newblock {\em arXiv preprint arXiv:2101.11565}, 2021.
+
+\bibitem{gilpin2020smooth}
+Yann Gilpin, Vince Kurtz, and Hai Lin.
+\newblock A smooth robustness measure of signal temporal logic for symbolic
+  control.
+\newblock {\em IEEE Control Systems Letters}, 5(1):241--246, 2020.
+
+\bibitem{mehdipour2019arithmetic}
+Noushin Mehdipour, Cristian-Ioan Vasile, and Calin Belta.
+\newblock Arithmetic-geometric mean robustness for control from signal temporal
+  logic specifications.
+\newblock In {\em 2019 American Control Conference (ACC)}, pages 1690--1695.
+  IEEE, 2019.
+
+\bibitem{leung2020back}
+Karen Leung, Nikos Ar{\'e}chiga, and Marco Pavone.
+\newblock Back-propagation through signal temporal logic specifications:
+  Infusing logical structure into gradient-based methods.
+\newblock In {\em International Workshop on the Algorithmic Foundations of
+  Robotics}, pages 432--449. Springer, 2020.
+
+\bibitem{kurtz2020trajectory}
+Vince Kurtz and Hai Lin.
+\newblock Trajectory optimization for high-dimensional nonlinear systems under
+  stl specifications.
+\newblock {\em IEEE Control Systems Letters}, 5(4):1429--1434, 2020.
+
+\bibitem{lindemann2018control}
+Lars Lindemann and Dimos~V Dimarogonas.
+\newblock Control barrier functions for signal temporal logic tasks.
+\newblock {\em IEEE control systems letters}, 3(1):96--101, 2018.
+
+\bibitem{chen2022large}
+Steven~W Chen, Tianyu Wang, Nikolay Atanasov, Vijay Kumar, and Manfred Morari.
+\newblock Large scale model predictive control with neural networks and primal
+  active sets.
+\newblock {\em Automatica}, 135:109947, 2022.
+
+\bibitem{zhang2019safe}
+Xiaojing Zhang, Monimoy Bujarbaruah, and Francesco Borrelli.
+\newblock Safe and near-optimal policy learning for model predictive control
+  using primal-dual neural networks.
+\newblock In {\em 2019 American Control Conference (ACC)}, pages 354--359.
+  IEEE, 2019.
+
+\bibitem{tang2018learning}
+Gao Tang, Weidong Sun, and Kris Hauser.
+\newblock Learning trajectories for real-time optimal control of quadrotors.
+\newblock In {\em 2018 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)}, pages 3620--3625. IEEE, 2018.
+
+\bibitem{tang2019data}
+Gao Tang and Kris Hauser.
+\newblock A data-driven indirect method for nonlinear optimal control.
+\newblock {\em Astrodynamics}, 3(4):345--359, 2019.
+
+\bibitem{agrawal2020learning}
+Akshay Agrawal, Shane Barratt, Stephen Boyd, and Bartolomeo Stellato.
+\newblock Learning convex optimization control policies.
+\newblock In {\em Learning for Dynamics and Control}, pages 361--373. PMLR,
+  2020.
+
+\bibitem{bengio2021machine}
+Yoshua Bengio, Andrea Lodi, and Antoine Prouvost.
+\newblock Machine learning for combinatorial optimization: a methodological
+  tour d’horizon.
+\newblock {\em European Journal of Operational Research}, 290(2):405--421,
+  2021.
+
+\bibitem{lodi2017learning}
+Andrea Lodi and Giulia Zarpellon.
+\newblock On learning and branching: a survey.
+\newblock {\em Top}, 25(2):207--236, 2017.
+
+\bibitem{khalil2017learning}
+Elias Khalil, Hanjun Dai, Yuyu Zhang, Bistra Dilkina, and Le~Song.
+\newblock Learning combinatorial optimization algorithms over graphs.
+\newblock {\em Advances in neural information processing systems}, 30, 2017.
+
+\bibitem{he2014learning}
+He~He, Hal Daume~III, and Jason~M Eisner.
+\newblock Learning to search in branch and bound algorithms.
+\newblock {\em Advances in neural information processing systems}, 27, 2014.
+
+\bibitem{masti2019learning}
+Daniele Masti and Alberto Bemporad.
+\newblock Learning binary warm starts for multiparametric mixed-integer
+  quadratic programming.
+\newblock In {\em 2019 18th European Control Conference (ECC)}, pages
+  1494--1499. IEEE, 2019.
+
+\bibitem{deits2019lvis}
+Robin Deits, Twan Koolen, and Russ Tedrake.
+\newblock Lvis: Learning from value function intervals for contact-aware robot
+  controllers.
+\newblock In {\em 2019 International Conference on Robotics and Automation
+  (ICRA)}, pages 7762--7768. IEEE, 2019.
+
+\bibitem{baier2008principles}
+Christel Baier and Joost-Pieter Katoen.
+\newblock {\em Principles of model checking}.
+\newblock MIT press, 2008.
+
+\bibitem{2019Formal}
+C.~Belta and S.~Sadraddini.
+\newblock Formal methods for control synthesis: An optimization perspective.
+\newblock {\em Annual Review of Control, Robotics, and Autonomous Systems},
+  2(1), 2019.
+
+\bibitem{Maryam2019}
+Vasileios Lefkopoulos and Maryam Kamgarpour.
+\newblock Using uncertainty data in chance-constrained trajectory planning.
+\newblock In {\em 2019 18th European Control Conference (ECC)}, pages
+  2264--2269, 2019.
+
+\bibitem{jaynes1973well}
+Edwin~T Jaynes.
+\newblock The well-posed problem.
+\newblock {\em Foundations of physics}, 3(4):477--492, 1973.
+
+\bibitem{bertsimas2021voice}
+Dimitris Bertsimas and Bartolomeo Stellato.
+\newblock The voice of optimization.
+\newblock {\em Machine Learning}, 110(2):249--277, 2021.
+
+\bibitem{vielma2011modeling}
+Juan~Pablo Vielma and George~L Nemhauser.
+\newblock Modeling disjunctive constraints with a logarithmic number of binary
+  variables and constraints.
+\newblock {\em Mathematical Programming}, 128(1):49--72, 2011.
+
+\bibitem{OMISTL_git}
+Yi~Qi and Sycamore.
+\newblock Omistl.
+\newblock [OL].
+\newblock \url{https://github.com/prodaddyYI/OMISTL.git}.
+
+\end{thebibliography}
